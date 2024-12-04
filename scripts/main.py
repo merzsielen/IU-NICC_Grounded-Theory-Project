@@ -97,13 +97,13 @@ def main():
 
 	# This is just an example query.
 	retriever = index.as_retriever(include_text=False)
-	results = retriever.retrieve("What happened in Bloomington in 2024")
+	results = retriever.retrieve("What motivates people to become radicalized?")
 	for record in results:
 		print(record.text)
 
-	# query_engine = index.as_query_engine(include_text=True)
-	# response = query_engine.query("What happened in Bloomington in 2024?")
-	# print(str(response))
+	query_engine = index.as_query_engine(include_text=True)
+	response = query_engine.query("What motivates people to become radicalized?")
+	print(str(response))
 	
 if __name__ == '__main__':
     main()
